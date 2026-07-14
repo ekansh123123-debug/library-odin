@@ -20,7 +20,7 @@ body {
 
 #box {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     border: 1px solid black;
     width: 100%;
     max-width: 600px;
@@ -29,10 +29,11 @@ body {
 }
 
 /* Optional styling to make your columns look organized */
-#title, #author, #info {
+#title, #author, #info,#numberPages {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    border: 1px solid black;
 }
 
 #dialogInterface {
