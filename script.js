@@ -1,24 +1,24 @@
 let myLibraray = [
     {
         author: "ram",
-        titel: "astro",
+        title: "astro",
         info:"About astroname"
     },
     {
         author: "shame",
-        titel: "non astro",
+        title: "non astro",
         info: "agaist astro"
     },
     {
         author:"anu",
-        titel: "another",
+        title: "another",
         info: "ajdf"
     }
 ];
 
 function Book(title,author,info) {
     this.id = crypto.randomUUID();
-    this.titel = title;
+    this.title = title;
     this.author = author;
     this.info = info;
 }
@@ -34,26 +34,33 @@ const newBookButtonEvent = (e) => {
 const addBookToDisplay = () => {
     author.textContent = "";
     info.textContent = "";
-    titel.textContent = "";
+    title.textContent = "";
 
     for (const book of myLibraray){
         const newauthor = document.createElement("div");
         const newinfo = document.createElement("div");
-        const newtitel = document.createElement("div");
+        const newtitle = document.createElement("div");
         
         newauthor.textContent = book.author;
         newinfo.textContent =  book.info;
-        newtitel.textContent = book.titel;
+        newtitle.textContent = book.title;
         
         author.appendChild(newauthor);
         info.appendChild(newinfo);
-        titel.appendChild(newtitel);
+        title.appendChild(newtitle);
     }
 }
 const book = document.querySelector("#book");
 const newBookButton = document.querySelector("#newBookButton");
 const author = document.querySelector("#author");
 const info = document.querySelector("#info");
-const titel = document.querySelector("#titel");
+const title = document.querySelector("#title");
 
 newBookButton.addEventListener("click",newBookButtonEvent);
+
+const dialog = document.querySelector("#dialogInterface");
+const cancelBtn = document.querySelector("#closeBtn");
+const addBookbtn = document.querySelector("#")
+
+cancelBtn.addEventListener("click", () => dialog.showModal());
+cancelBtn.addEventListener("click", () => dialog.close());

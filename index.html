@@ -7,21 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <div>
     <button id="newBookButton">Add New Book</button>
-    <form action="">
-        <label for="titel">Add Titel</label>
-        <input type="text" name="titel" id="titel">
-        <label for="titel">Add Titel</label>
-        <input type="text" name="titel" id="titel">
-        <label for="titel">Add Titel</label>
-        <input type="text" name="titel" id="titel">
-        <button type="submit">Submit</button>
-    </form>
+    <dialog id="dialogInterface">
+        <form action="dialog">
+            <h3>ADD BOOK INFO</h3>
+            <div>
+                <label for="title">Add Title</label>
+                <input type="text" name="title" id="title" required placeholder="title...">
+            </div>
+            <div>
+                <label for="auathor">Add Author</label>
+                <input type="text" name="author" id="auathor" required placeholder="ram...">
+            </div>
+            <div>
+            <label for="info">topic</label>
+            <input type="text" name="info" id="info" required placeholder="about book...">
+            </div>
+            <div id="buttons">
+                <button type="submit" id="submitBtn">submit</button>
+                <button type="reset" id="resetBtn">reset</button>
+                <button id="closeBtn">Cancel</button>
+            </div>
+        </form>
+    </dialog>
     <div id="box">
-        <div id="titel"></div>
+        <div id="title"></div>
         <div id="author"></div>
         <div id="info"></div>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>
