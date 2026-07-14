@@ -1,37 +1,52 @@
-*{
+/* FIXED: Removed display:flex from universal selector to prevent layout breakage */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-}
-#addBookButton{
-    width: 100px;
-    
+    padding: 20px;
 }
 
-#box{
+/* FIXED: Changed to match HTML ID */
+#newBookButton {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+#box {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    border: 1px solid;
+    border: 1px solid black;
+    width: 100%;
+    max-width: 600px;
+    gap: 10px;
+    padding: 10px;
 }
 
-#title{
-
-}
-
-#author{
-
-}
-
-#info{
-
-}
-
-#dialogInterface{
+/* Optional styling to make your columns look organized */
+#title, #author, #info {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
-#dialogInterface #buttons{
+#dialogInterface {
+    padding: 20px;
+}
+
+#dialogInterface form {
     display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#buttonsDiv {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
 }

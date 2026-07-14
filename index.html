@@ -10,24 +10,24 @@
     <div>
     <button id="newBookButton">Add New Book</button>
     <dialog id="dialogInterface">
-        <form action="dialog">
+        <form method="dialog" id="form">
             <h3>ADD BOOK INFO</h3>
             <div>
                 <label for="title">Add Title</label>
-                <input type="text" name="title" id="title" required placeholder="title...">
+                <input type="text" name="titleInput" id="titleInput" required placeholder="title...">
             </div>
             <div>
-                <label for="auathor">Add Author</label>
-                <input type="text" name="author" id="auathor" required placeholder="ram...">
+                <label for="author">Add Author</label>
+                <input type="text" name="authorInput" id="authorInput" required placeholder="ram...">
             </div>
             <div>
-            <label for="info">topic</label>
-            <input type="text" name="info" id="info" required placeholder="about book...">
+                <label for="info">topic</label>
+                <input type="text" name="infoInput" id="infoInput" required placeholder="about book...">
             </div>
-            <div id="buttons">
+            <div id="buttonsDiv">
                 <button type="submit" id="submitBtn">submit</button>
                 <button type="reset" id="resetBtn">reset</button>
-                <button id="closeBtn">Cancel</button>
+                <button type="button" id="closeBtn">Cancel</button>
             </div>
         </form>
     </dialog>
