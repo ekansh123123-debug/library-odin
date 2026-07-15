@@ -67,6 +67,7 @@ const updateDisplay = () => {
         info.appendChild(newinfo);
         title.appendChild(newtitle);
         numberPages.appendChild(newnumberPages);
+        read.appendChild(newreadStatus);
     }
 }
 const formSubmitFunction = (e) => {
