@@ -1,5 +1,6 @@
 let myLibraray = [
     {
+        id: crypto.randomUUID() ,
         author: "ram",
         title: "astro",
         info:"About astroname",
@@ -7,6 +8,7 @@ let myLibraray = [
         checkBoxValue:true,
     },
     {
+        id: crypto.randomUUID(),
         author: "shame",
         title: "non astro",
         info: "agaist astro",
@@ -14,6 +16,7 @@ let myLibraray = [
         checkBoxValue: false
     },
     {
+        id: crypto.randomUUID(),
         author:"anu",
         title: "another",
         info: "ajdf",
@@ -57,8 +60,8 @@ const updateDisplay = () => {
         newinfo.textContent =  book.info;
         newtitle.textContent = book.title;
         newnumberPages.textContent = book.numberPages;
-        if(book.checkBoxValue) newreadStatus = 'Read';
-        else newreadStatus = 'Not Read';
+        if(book.checkBoxValue) newreadStatus.textContent = 'Read';
+        else newreadStatus.textContent = 'Not Read';
         
         author.appendChild(newauthor);
         info.appendChild(newinfo);
@@ -73,8 +76,8 @@ const formSubmitFunction = (e) => {
     const infoInput = document.querySelector("#infoInput");
     const titleInput = document.querySelector("#titleInput");
     const numberPagesInput = document.querySelector("#numberPagesInput")
-    const checkBoxValue = document.querySelector("readCheckBox").checked();
-
+    
+    const checkBoxValue = document.querySelector("#readCheckBox").checked;
     const authorValue = authorInput.value;
     const titleValue = titleInput.value;
     const infoValue = infoInput.value;
@@ -107,3 +110,5 @@ cancelBtn.addEventListener("click", (e) => {
 addBookbtn.addEventListener("click", () => dialog.showModal());
 
 form.addEventListener("submit",formSubmitFunction);
+
+updateDisplay();
