@@ -3,28 +3,32 @@ let myLibraray = [
         author: "ram",
         title: "astro",
         info:"About astroname",
-        numberPages:'5'
+        numberPages:'5',
+        checkBoxValue:true,
     },
     {
         author: "shame",
         title: "non astro",
         info: "agaist astro",
-        numberPages:'100'
+        numberPages:'100',
+        checkBoxValue: false
     },
     {
         author:"anu",
         title: "another",
         info: "ajdf",
-        numberPages: '300'
+        numberPages: '300',
+        checkBoxValue:true
     }
 ];
 
-function Book(title,author,info,numberPages) {
+function Book(title,author,info,numberPages,checkBoxValue) {
     this.id = crypto.randomUUID();
     this.title = title;
     this.author = author;
     this.info = info;
     this.numberPages =numberPages;
+    this.checkBoxValue = checkBoxValue;
 }
 
 function addToLibrary(book) {
@@ -40,17 +44,21 @@ const updateDisplay = () => {
     info.textContent = "";
     title.textContent = "";
     numberPages.textContent = "";
+    
 
     for (const book of myLibraray){
         const newauthor = document.createElement("div");
         const newinfo = document.createElement("div");
         const newtitle = document.createElement("div");
         const newnumberPages = document.createElement("div");
+        const newreadStatus = document.createElement("div");
         
         newauthor.textContent = book.author;
         newinfo.textContent =  book.info;
         newtitle.textContent = book.title;
         newnumberPages.textContent = book.numberPages;
+        if(book.checkBoxValue) newreadStatus = 'Read';
+        else newreadStatus = 'Not Read';
         
         author.appendChild(newauthor);
         info.appendChild(newinfo);
@@ -65,13 +73,14 @@ const formSubmitFunction = (e) => {
     const infoInput = document.querySelector("#infoInput");
     const titleInput = document.querySelector("#titleInput");
     const numberPagesInput = document.querySelector("#numberPagesInput")
+    const checkBoxValue = document.querySelector("readCheckBox").checked();
 
     const authorValue = authorInput.value;
     const titleValue = titleInput.value;
     const infoValue = infoInput.value;
     const numberPagesValue = numberPagesInput.value;
 
-    const book = new Book(titleValue,authorValue,infoValue,numberPagesValue);
+    const book = new Book(titleValue,authorValue,infoValue,numberPagesValue,checkBoxValue);
 
     addToLibrary(book);
     updateDisplay();
@@ -87,6 +96,7 @@ const addBookbtn = document.querySelector("#newBookButton")
 const cancelBtn = document.querySelector("#closeBtn");
 const form = document.querySelector("#form");
 const numberPages=document.querySelector("#numberPages");
+const read =document.querySelector("#read");
 
 
 cancelBtn.addEventListener("click", (e) => {
@@ -97,4 +107,3 @@ cancelBtn.addEventListener("click", (e) => {
 addBookbtn.addEventListener("click", () => dialog.showModal());
 
 form.addEventListener("submit",formSubmitFunction);
-updateDisplay();
