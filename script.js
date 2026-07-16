@@ -93,7 +93,7 @@ const formSubmitFunction = (e) => {
     dialog.close();
 }
 
-const deleatBox = () =>{
+const deleatBoxEvent = () =>{
 
 }
 
