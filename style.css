@@ -19,8 +19,7 @@ body {
 
 #box {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
     border: 1px solid black;
     width: 100%;
     max-width: 600px;

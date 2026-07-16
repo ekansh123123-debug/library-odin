@@ -92,6 +92,11 @@ const formSubmitFunction = (e) => {
     form.reset();
     dialog.close();
 }
+
+const deleatBox = () =>{
+
+}
+
 const author = document.querySelector("#author");
 const info = document.querySelector("#info");
 const title = document.querySelector("#title");
@@ -101,7 +106,7 @@ const cancelBtn = document.querySelector("#closeBtn");
 const form = document.querySelector("#form");
 const numberPages=document.querySelector("#numberPages");
 const read =document.querySelector("#read");
-
+const deleatBox = document.querySelector("#delete");
 
 cancelBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -111,5 +116,7 @@ cancelBtn.addEventListener("click", (e) => {
 addBookbtn.addEventListener("click", () => dialog.showModal());
 
 form.addEventListener("submit",formSubmitFunction);
+
+deleatBox.addEventListener("click",deleatBoxEvent);
 
 updateDisplay();
