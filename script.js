@@ -42,6 +42,7 @@ const newBookButtonEvent = (e) => {
     e.preventDefault();
     updateDisplay();
 }
+
 const updateDisplay = () => {
     author.textContent = "";
     info.textContent = "";
@@ -54,20 +55,38 @@ const updateDisplay = () => {
         const newinfo = document.createElement("div");
         const newtitle = document.createElement("div");
         const newnumberPages = document.createElement("div");
+        const newcheckBox = document.createElement("input");
         const newreadStatus = document.createElement("div");
+        const newDeletebtn = document.createElement('button');
         
+        
+        newcheckBox.type="checkbox";
+
         newauthor.textContent = book.author;
         newinfo.textContent =  book.info;
         newtitle.textContent = book.title;
         newnumberPages.textContent = book.numberPages;
-        if(book.checkBoxValue) newreadStatus.textContent = 'Read';
-        else newreadStatus.textContent = 'Not Read';
+
+        if(book.checkBoxValue) {
+            newreadStatus.textContent = 'Read';
+            newcheckBox.checked = true;
+        }
+        else {
+            newreadStatus.textContent = 'Not Read';
+            newcheckBox.checked = false;
+        }
         
+        newcheckBox.addEventListener('change',(e) => {
+            e.preventDefault();
+            book.checkBoxValue = !book.checkBoxValue;
+        });
+
         author.appendChild(newauthor);
         info.appendChild(newinfo);
         title.appendChild(newtitle);
         numberPages.appendChild(newnumberPages);
         read.appendChild(newreadStatus);
+        title.appendChild(newcheckBox);
     }
 }
 const formSubmitFunction = (e) => {
