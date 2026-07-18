@@ -48,9 +48,12 @@ const updateDisplay = () => {
     info.textContent = "";
     title.textContent = "";
     numberPages.textContent = "";
-    
+    read.textContent = "";
+    deleatBox.textContent = "";
+    indexCheckBox.textContent = "";
 
     for (const book of myLibraray){
+
         const newauthor = document.createElement("div");
         const newinfo = document.createElement("div");
         const newtitle = document.createElement("div");
@@ -79,6 +82,7 @@ const updateDisplay = () => {
         newcheckBox.addEventListener('change',(e) => {
             e.preventDefault();
             book.checkBoxValue = !book.checkBoxValue;
+            updateDisplay();
         });
 
         author.appendChild(newauthor);
@@ -86,7 +90,7 @@ const updateDisplay = () => {
         title.appendChild(newtitle);
         numberPages.appendChild(newnumberPages);
         read.appendChild(newreadStatus);
-        title.appendChild(newcheckBox);
+        indexCheckBox.appendChild(newcheckBox);
     }
 }
 const formSubmitFunction = (e) => {
@@ -112,10 +116,11 @@ const formSubmitFunction = (e) => {
     dialog.close();
 }
 
-const deleatBoxEvent = () =>{
+const deleatBoxEvent = () => {
 
 }
 
+const indexCheckBox = document.querySelector("#indexCheckBox");
 const author = document.querySelector("#author");
 const info = document.querySelector("#info");
 const title = document.querySelector("#title");
